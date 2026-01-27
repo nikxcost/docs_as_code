@@ -1,18 +1,32 @@
 async function createFeature(tp) {
+    // Находим все папки features в vault
+    const allFolders = app.vault.getAllLoadedFiles()
+        .filter(f => f.children !== undefined) // только папки
+        .filter(f => f.path.endsWith('/features') || f.path.includes('/features/'))
+        .filter(f => f.path.endsWith('/features')) // только сами папки features
+        .map(f => f.path);
+
+    // Если папок features нет
+    if (allFolders.length === 0) {
+        return "Ошибка: не найдено папок features в проекте";
+    }
+
+    // Показываем выпадающий список для выбора capability
+    const selectedFolder = await tp.system.suggester(
+        allFolders.map(f => f.replace('docs/products/', '').replace('/capabilities/', ' → ').replace('/features', '')),
+        allFolders,
+        false,
+        "Выберите Capability:"
+    );
+
+    if (!selectedFolder) return "Отменено";
+
     // Запрашиваем название feature
     const featureName = await tp.system.prompt("Название новой Feature:");
     if (!featureName) return "Отменено";
 
-    // Получаем текущую папку
-    const currentFolder = tp.file.folder(true);
-
-    // Проверяем что мы в папке features
-    if (!currentFolder.includes("features")) {
-        return "Ошибка: выполните команду из папки features";
-    }
-
     // Создаём путь к новой папке
-    const featureFolder = `${currentFolder}/${featureName}`;
+    const featureFolder = `${selectedFolder}/${featureName}`;
 
     // Создаём папку
     await app.vault.createFolder(featureFolder);
