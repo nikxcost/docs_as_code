@@ -1,38 +1,47 @@
-async function createFeature(tp) {
-    // Находим все папки features в vault
+// Скрипт для QuickAdd - создание новой Функции (Fxxx name)
+module.exports = async (params) => {
+    const { app, quickAddApi } = params;
+
+    // Находим все функциональные блоки (папки с FBxxx)
     const allFolders = app.vault.getAllLoadedFiles()
-        .filter(f => f.children !== undefined) // только папки
-        .filter(f => f.path.endsWith('/features') || f.path.includes('/features/'))
-        .filter(f => f.path.endsWith('/features')) // только сами папки features
+        .filter(f => f.children !== undefined)
+        .filter(f => f.path.startsWith('docs/products/') && f.path.includes('/FB'))
+        .filter(f => !f.path.includes('/F') || f.path.match(/\/FB\d+/))
+        .filter(f => f.name.match(/^FB\d+/))
         .map(f => f.path);
 
-    // Если папок features нет
     if (allFolders.length === 0) {
-        return "Ошибка: не найдено папок features в проекте";
+        new Notice("Ошибка: не найдено функциональных блоков (FBxxx)");
+        return;
     }
 
-    // Показываем выпадающий список для выбора capability
-    const selectedFolder = await tp.system.suggester(
-        allFolders.map(f => f.replace('docs/products/', '').replace('/capabilities/', ' → ').replace('/features', '')),
-        allFolders,
-        false,
-        "Выберите Capability:"
+    // Показываем выбор функционального блока
+    const selectedFolder = await quickAddApi.suggester(
+        allFolders.map(f => {
+            const parts = f.replace('docs/products/', '').split('/');
+            return `${parts[0]} → ${parts[1]}`;
+        }),
+        allFolders
     );
 
-    if (!selectedFolder) return "Отменено";
+    if (!selectedFolder) return;
 
-    // Запрашиваем название feature
-    const featureName = await tp.system.prompt("Название новой Feature:");
-    if (!featureName) return "Отменено";
+    // Запрашиваем номер функции
+    const featureNumber = await quickAddApi.inputPrompt("Номер функции (например: 001):");
+    if (!featureNumber) return;
 
-    // Создаём путь к новой папке
-    const featureFolder = `${selectedFolder}/${featureName}`;
+    // Запрашиваем название функции
+    const featureName = await quickAddApi.inputPrompt("Название функции:");
+    if (!featureName) return;
+
+    const fullName = `F${featureNumber} ${featureName}`;
+    const featureFolder = `${selectedFolder}/${fullName}`;
 
     // Создаём папку
     await app.vault.createFolder(featureFolder);
 
     // Содержимое index.md
-    const indexContent = `# ${featureName}
+    const indexContent = `# ${fullName}
 
 ## Зачем это нужно
 
@@ -92,7 +101,7 @@ async function createFeature(tp) {
 `;
 
     // Содержимое requirements.md
-    const requirementsContent = `# Требования: ${featureName}
+    const requirementsContent = `# Требования: ${fullName}
 
 ## Функциональные требования
 
@@ -132,7 +141,7 @@ async function createFeature(tp) {
 `;
 
     // Содержимое process.md
-    const processContent = `# Процесс: ${featureName}
+    const processContent = `# Процесс: ${fullName}
 
 ## Диаграмма процесса
 
@@ -175,7 +184,5 @@ flowchart TD
     const file = app.vault.getAbstractFileByPath(`${featureFolder}/index.md`);
     await app.workspace.getLeaf().openFile(file);
 
-    return `Feature "${featureName}" создана!`;
-}
-
-module.exports = createFeature;
+    new Notice(`Функция "${fullName}" создана!`);
+};
