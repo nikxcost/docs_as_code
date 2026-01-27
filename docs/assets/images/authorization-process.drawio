@@ -1,0 +1,131 @@
+<mxfile host="app.diagrams.net" modified="2025-01-27T18:30:00.000Z" agent="5.0" version="21.0.0" type="device">
+  <diagram name="Authorization BPMN" id="auth-bpmn">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Pool: Authorization Process -->
+        <mxCell id="pool1" value="Процесс авторизации" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1000" height="300" as="geometry" />
+        </mxCell>
+
+        <!-- Lane: User -->
+        <mxCell id="lane1" value="Пользователь" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="pool1">
+          <mxGeometry x="30" y="0" width="970" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Lane: System -->
+        <mxCell id="lane2" value="Система" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="pool1">
+          <mxGeometry x="30" y="100" width="970" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Lane: Database -->
+        <mxCell id="lane3" value="База данных" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pool1">
+          <mxGeometry x="30" y="200" width="970" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Start Event -->
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="lane1">
+          <mxGeometry x="40" y="35" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Task: Enter Credentials -->
+        <mxCell id="task1" value="Ввод логина&#xa;и пароля" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane1">
+          <mxGeometry x="110" y="25" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Task: Validate Input -->
+        <mxCell id="task2" value="Валидация&#xa;данных" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane2">
+          <mxGeometry x="110" y="25" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Gateway: Valid? -->
+        <mxCell id="gw1" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane2">
+          <mxGeometry x="250" y="25" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Task: Check DB -->
+        <mxCell id="task3" value="Проверка&#xa;учетных данных" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="lane3">
+          <mxGeometry x="330" y="25" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Gateway: Found? -->
+        <mxCell id="gw2" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane2">
+          <mxGeometry x="470" y="25" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Task: Generate Token -->
+        <mxCell id="task4" value="Генерация&#xa;токена" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lane2">
+          <mxGeometry x="560" y="25" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Task: Show Dashboard -->
+        <mxCell id="task5" value="Отображение&#xa;главной страницы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="lane1">
+          <mxGeometry x="700" y="25" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- End Event: Success -->
+        <mxCell id="end1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="lane1">
+          <mxGeometry x="850" y="35" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Task: Show Error -->
+        <mxCell id="task6" value="Показать&#xa;ошибку" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="lane1">
+          <mxGeometry x="560" y="25" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="start" target="task1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="task1" target="task2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="task2" target="gw1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow4" value="Да" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="gw1" target="task3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="task3" target="gw2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow6" value="Да" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="gw2" target="task4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="task4" target="task5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="task5" target="end1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow9" value="Нет" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="gw1" target="task6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow10" value="Нет" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="gw2" target="task6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arrow11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="pool1" source="task6" target="task1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="10" />
+              <mxPoint x="160" y="10" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
