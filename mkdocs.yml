@@ -52,19 +52,4 @@ plugins:
   - search:
       lang: ru
   - drawio
-
-not_in_nav: |
-  /templates/**
-
-nav:
-  - Home: index.md
-  - Products:
-      - Е001 Инструменты оператора:
-          - Capabilities:
-              - Payments:
-                  - Overview: products/Е001 Инструменты оператора/capabilities/payments/index.md
-                  - Features:
-                      - Refund:
-                          - Overview: products/Е001 Инструменты оператора/capabilities/payments/features/refund/index.md
-                          - Requirements: products/Е001 Инструменты оператора/capabilities/payments/features/refund/requirements.md
-                          - Process: products/Е001 Инструменты оператора/capabilities/payments/features/refund/process.md
+  - awesome-pages
