@@ -1,32 +1,40 @@
-# Docs-as-Code Prototype
+# Docs-as-Code: Документация компании
 
-Прототип системы продуктовой документации для бизнес-аналитиков.
+Система продуктовой документации для бизнес-аналитиков на базе docs-as-code подхода.
+
+## Для аналитиков (новичков)
+
+**Начните здесь:** [Руководство по началу работы](docs/ONBOARDING.md)
+
+Краткая версия:
+1. Установите [GitHub Desktop](https://desktop.github.com/)
+2. Клонируйте репозиторий
+3. Установите [Obsidian](https://obsidian.md/)
+4. Откройте папку репозитория как vault
+5. Установите плагин **Obsidian Git**
+6. Готово! Изменения синхронизируются автоматически
 
 ## Stack
 
 - **Markdown** — формат документации
-- **Obsidian** — редактор для BA
+- **Obsidian** — редактор для BA (с автосинхронизацией)
 - **MkDocs Material** — генератор статического сайта
+- **GitHub Actions** — автоматический деплой
 
-## Quick Start
+## Для разработчиков
 
-### 1. Установка зависимостей
+### Локальный запуск
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # На Windows: venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-```
-
-### 2. Запуск локального сервера
-
-```bash
 mkdocs serve
 ```
 
 Открой в браузере: http://localhost:8000
 
-### 3. Сборка статического сайта
+### Сборка сайта
 
 ```bash
 mkdocs build
@@ -34,41 +42,31 @@ mkdocs build
 
 Результат в папке `site/`.
 
-## Настройка Obsidian
-
-1. Открой Obsidian
-2. **Open folder as vault** → выбери корень этого репозитория
-3. **Settings → Files & Links:**
-   - Default location for new attachments: `assets/images`
-   - Use [[Wikilinks]]: выключить (использовать Markdown links)
-4. Рекомендуемые плагины:
-   - **Obsidian Git** — для коммитов прямо из Obsidian
-   - **Advanced Tables** — удобное редактирование таблиц
-   - **Templates** — быстрая вставка шаблонов
-
 ## Структура репозитория
 
 ```
 .
-├── docs/                    # Документация
-│   ├── products/            # Продукты
-│   │   └── product-a/
+├── docs/                           # Документация
+│   ├── products/                   # Продукты компании
+│   │   └── [Product]/
 │   │       └── capabilities/
-│   │           └── payments/
-│   └── templates/           # Шаблоны документов
+│   │           └── [Capability]/
+│   │               ├── index.md
+│   │               └── features/
+│   │                   └── [Feature]/
+│   ├── templates/                  # Шаблоны документов
+│   └── ONBOARDING.md               # Руководство для новичков
 ├── assets/
-│   └── images/              # Изображения (для Obsidian)
-├── mkdocs.yml               # Конфигурация MkDocs
-├── requirements.txt         # Python зависимости
-└── README.md
+│   └── images/                     # Изображения
+├── .github/
+│   └── workflows/
+│       └── deploy.yml              # CI/CD pipeline
+├── .obsidian/                      # Настройки Obsidian
+│   └── plugins/
+│       └── obsidian-git/           # Конфиг автосинхронизации
+├── mkdocs.yml                      # Конфигурация MkDocs
+└── requirements.txt                # Python зависимости
 ```
-
-## Создание нового документа
-
-1. Скопируй подходящий шаблон из `docs/templates/`
-2. Размести в нужной папке согласно иерархии
-3. Заполни содержимое
-4. Добавь в `mkdocs.yml` в секцию `nav`
 
 ## Иерархия документации
 
@@ -76,6 +74,37 @@ mkdocs build
 Product → Capability → Feature → Requirements
 ```
 
-## GitHub Repository
+## Возможности
 
-https://github.com/nikxcost/docs_as_code
+- **Mermaid диаграммы** — рисуйте схемы прямо в markdown
+- **Draw.io** — вставляйте сложные диаграммы
+- **Admonitions** — информационные блоки (note, warning, tip)
+- **Автонавигация** — новые страницы появляются автоматически
+- **Шаблоны** — готовые структуры для Feature, Capability, Requirements
+- **Автосинхронизация** — изменения синхронизируются каждые 5 минут
+
+## Совместная работа
+
+### Для аналитиков
+
+1. Открываете Obsidian — автоматически загружаются изменения коллег
+2. Редактируете документы — сохраняете как обычно (Ctrl+S)
+3. Закрываете Obsidian — изменения автоматически отправляются
+
+### При конфликтах
+
+Если два человека редактировали один файл:
+1. Появится уведомление
+2. Выберите нужную версию или объедините вручную
+3. При сложных случаях — обратитесь к тимлиду
+
+## CI/CD
+
+При push в `main`:
+1. GitHub Actions собирает сайт
+2. Автоматически деплоится на GitHub Pages
+
+## Ссылки
+
+- **GitHub:** https://github.com/nikxcost/docs_as_code
+- **Документация:** [ваш-сайт].github.io/docs_as_code
