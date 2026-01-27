@@ -1,0 +1,70 @@
+site_name: Company Product Documentation
+site_description: Документация продуктов компании
+site_author: Product Team
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Темная тема
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Светлая тема
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search:
+      lang: ru
+  - drawio
+
+not_in_nav: |
+  /templates/**
+
+nav:
+  - Home: index.md
+  - Products:
+      - Е001 Инструменты оператора:
+          - Capabilities:
+              - Payments:
+                  - Overview: products/Е001 Инструменты оператора/capabilities/payments/index.md
+                  - Features:
+                      - Refund:
+                          - Overview: products/Е001 Инструменты оператора/capabilities/payments/features/refund/index.md
+                          - Requirements: products/Е001 Инструменты оператора/capabilities/payments/features/refund/requirements.md
+                          - Process: products/Е001 Инструменты оператора/capabilities/payments/features/refund/process.md
