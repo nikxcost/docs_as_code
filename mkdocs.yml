@@ -12,9 +12,16 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
     - search.highlight
     - search.suggest
+    - search.share
     - content.tabs.link
+    - content.code.copy
   palette:
     - scheme: default
       primary: indigo
@@ -51,5 +58,17 @@ markdown_extensions:
 plugins:
   - search:
       lang: ru
+      separator: '[\s\-\.]+'
+  - git-revision-date-localized:
+      type: timeago
+      locale: ru
+      enable_creation_date: true
+  - git-authors
+  - tags
   - drawio
   - awesome-pages
+  - macros
+
+extra:
+  company: "Company Name"
+  jira_url: "https://jira.company.com"
