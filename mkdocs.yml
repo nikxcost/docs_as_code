@@ -1,6 +1,7 @@
 site_name: Company Product Documentation
 site_description: Документация продуктов компании
 site_author: Product Team
+site_url: https://nikxcost.github.io/docs_as_code/
 
 docs_dir: docs
 site_dir: site
@@ -56,6 +57,7 @@ markdown_extensions:
   - md_in_html
 
 plugins:
+  - drawio
   - search:
       lang: ru
       separator: '[\s\-\.]+'
@@ -65,7 +67,6 @@ plugins:
       enable_creation_date: true
   - git-authors
   - tags
-  - drawio
   - awesome-pages
   - macros
 
