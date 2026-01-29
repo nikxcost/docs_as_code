@@ -43,7 +43,7 @@ GitHub требует токен вместо пароля для синхрон
 При первой попытке синхронизации Obsidian запросит авторизацию:
 
 1. Нажмите `Ctrl+P` (или `Cmd+P` на Mac)
-2. Введите "commit" и выберите **"Obsidian Git: Commit all changes"**
+2. Введите "git" и выберите **"Git: Commit all changes"** (или "Git: Push")
 3. При запросе авторизации введите:
    - Username: ваш логин GitHub
    - Password: **ваш Personal Access Token** (не пароль!)
@@ -176,11 +176,11 @@ tags:
 ### Как получить последние изменения коллег?
 
 Изменения загружаются автоматически. Для ручной загрузки:
-`Ctrl+P` → "Obsidian Git: Pull"
+`Ctrl+P` → "Git: Pull"
 
 ### Как немедленно отправить изменения?
 
-`Ctrl+P` → "Obsidian Git: Commit and push"
+`Ctrl+P` → "Git: Commit-and-sync"
 
 ### Что делать при конфликте?
 
