@@ -10,8 +10,8 @@ __pycache__/
 .Python
 pip-log.txt
 
-# Obsidian
-.obsidian/
+# Obsidian (workspace - локальное состояние окон)
+docs/.obsidian/workspace.json
 
 # IDE
 .idea/

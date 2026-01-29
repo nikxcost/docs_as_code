@@ -1,0 +1,244 @@
+{
+  "main": {
+    "id": "014755eb87781b98",
+    "type": "split",
+    "children": [
+      {
+        "id": "535b173588ea1449",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e652c89f628fc65c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F2 Платежи/features/refund/process.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "process"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9cc64f04ef09c707",
+    "type": "split",
+    "children": [
+      {
+        "id": "9a23c3f9757a1923",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7fd14cee7035fd65",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "3bdef758e52c62c8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "05e9eea38b6bb936",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9ff64b0f956d2d35",
+    "type": "split",
+    "children": [
+      {
+        "id": "7719b2de6d010380",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de0570502cbf45b5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/products/Е001 Инструменты оператора/capabilities/authorization/Без названия.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для Без названия"
+            }
+          },
+          {
+            "id": "d32eb4d46d7de204",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/products/Е001 Инструменты оператора/capabilities/authorization/Без названия.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из Без названия"
+            }
+          },
+          {
+            "id": "eaad3e96ebd17ccf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "3774ec10b46ef623",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "33bbc14962a6bc75",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F1 Авторизация/features/authorize/Без названия.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура Без названия"
+            }
+          },
+          {
+            "id": "38b5b14606255248",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "e652c89f628fc65c",
+  "lastOpenFiles": [
+    "site/css/timeago.css",
+    "site/css",
+    "site/js/timeago_mkdocs_material.js",
+    "site/js/timeago.min.js",
+    "site/js",
+    "site/search/search_index.json",
+    "site/search",
+    "site/products/Е003 Рекламная платформа/FB001 Функциональный блок/F001 Функция/requirements/index.html",
+    "site/products/Е003 Рекламная платформа/FB001 Функциональный блок/F001 Функция/process/index.html",
+    "site/products/Е003 Рекламная платформа/FB001 Функциональный блок/F001 Функция/requirements",
+    "site/products/Е003 Рекламная платформа/FB001 Функциональный блок/F001 Функция/process",
+    "site/assets/images/favicon.png",
+    "site/assets/images/Pasted image 20260127173700.png",
+    "site/assets/images/Pasted image 20260127173117.png",
+    "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F1 Авторизация/features/authorize/index.md",
+    "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F1 Авторизация/index.md",
+    "docs/ONBOARDING.md",
+    "venv/lib/python3.13/site-packages/mkdocs_macros_plugin-1.5.0.dist-info/licenses/LICENSE.md",
+    "venv/lib/python3.13/site-packages/mkdocs_macros/macros_info.md",
+    "docs/tags.md",
+    "docs/products/Е003 Рекламная платформа/FB001 Функциональный блок/F001 Функция/index.md",
+    "docs/products/Е003 Рекламная платформа/index.md",
+    "docs/products/Е003 Рекламная платформа/FB001 Функциональный блок/F001 Функция/process.md",
+    "docs/products/Е003 Рекламная платформа/FB001 Функциональный блок/F001 Функция/requirements.md",
+    "docs/products/Е003 Рекламная платформа/FB001 Функциональный блок/index.md",
+    "docs/products/EE002 Рекламная платформа/index.md",
+    "docs/products/EE002 Рекламная платформа/FB001 Функциональный блок/F001 Функция/process.md",
+    "docs/products/EE002 Рекламная платформа/FB001 Функциональный блок/F001 Функция/requirements.md",
+    "docs/products/EE002 Рекламная платформа/FB001 Функциональный блок/F001 Функция/index.md",
+    "docs/products/EE002 Рекламная платформа/FB001 Функциональный блок/index.md",
+    "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F1 Авторизация/features/authorize/Без названия.md",
+    "docs/products/EE002 Рекламная платформа E002 Рекламная платформа/index.md",
+    "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F2 Платежи/features/refund/F3 Тест скрипта/process.md",
+    "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F2 Платежи/features/refund/F3 Тест скрипта/requirements.md",
+    "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F2 Платежи/features/refund/F3 Тест скрипта/index.md",
+    "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F2 Платежи/features/refund/index.md",
+    "docs/products/Е001 Инструменты оператора/FB01 CRM Оператора/F2 Платежи/index.md",
+    "templates/Requirements.md",
+    "templates/New Feature.md",
+    "docs/assets/images/Pasted image 20260127173700.png",
+    "docs/assets/images/Pasted image 20260127173117.png",
+    "assets/images/Pasted image 20260127173117.png"
+  ]
+}
