@@ -1,0 +1,14 @@
+{
+  "autoSaveInterval": 5,
+  "autoPullInterval": 5,
+  "autoPullOnBoot": true,
+  "disablePush": false,
+  "pullBeforePush": true,
+  "disablePopups": false,
+  "commitMessage": "docs: {{date}} by {{hostname}}",
+  "autoCommitMessage": "auto: {{date}}",
+  "commitDateFormat": "YYYY-MM-DD HH:mm",
+  "syncMethod": "merge",
+  "showStatusBar": true,
+  "updateSubmodules": false
+}

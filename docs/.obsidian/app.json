@@ -1,0 +1,13 @@
+{
+  "attachmentFolderPath": "assets/images",
+  "useMarkdownLinks": true,
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "relative",
+  "userIgnoreFilters": [
+    "assets/",
+    "templates/",
+    "index.md",
+    "ONBOARDING.md"
+  ]
+}

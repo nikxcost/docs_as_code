@@ -1,0 +1,23 @@
+{
+  "attachmentFolderPath": "docs/assets/images",
+  "useMarkdownLinks": true,
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "relative",
+  "userIgnoreFilters": [
+    "assets/",
+    "scripts/",
+    "templates/",
+    ".github/",
+    "site/",
+    "venv/",
+    "mkdocs.yml",
+    "requirements.txt",
+    ".gitignore",
+    "README.md",
+    "docs/assets/",
+    "docs/templates/",
+    "docs/index.md",
+    "docs/ONBOARDING.md"
+  ]
+}
